@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malla Curricular Interactiva</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
+    <header>
+        <h1>Malla Curricular Interactiva</h1>
+        <p>Haz clic en un ramo para marcarlo como aprobado. Los ramos bloqueados necesitan que apruebes sus prerrequisitos.</p>
+    </header>
+
+    <div class="malla-curricular">
+        <div class="semestre">
+            <h2>Semestre 1</h2>
+            <div class="ramo" id="c1">Técnicas de Primeros Auxilios</div>
+            <div class="ramo" id="c2">Técnicas Básicas de Enfermería</div>
+            <div class="ramo" id="c3">Bioseguridad en la Atención Clínica</div>
+            <div class="ramo" id="c4">Anatomía y Fisiología</div>
+            <div class="ramo" id="c5">Habilidades Numéricas</div>
+            <div class="ramo" id="c6">Habilidades Básicas de Comunicación</div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre 2</h2>
+            <div class="ramo" id="c7" data-requisitos="c2,c4">Cuidados de Enfermería Maternoneonatal</div>
+            <div class="ramo" id="c8" data-requisitos="c2,c4">Cuidados de Enfermería Medico Quirúrgico</div>
+            <div class="ramo" id="c9" data-requisitos="c5">Administración de Fármaco</div>
+            <div class="ramo" id="c10" data-requisitos="c1,c2,c3">Práctica Clínica I</div>
+            <div class="ramo" id="c11" data-requisitos="c5">Habilidades del Lenguaje Matemático</div>
+            <div class="ramo" id="c12" data-requisitos="c6">Habilidades de Comunicación Efectiva</div>
+            <div class="ramo" id="c13">Fundamentos de Antropología</div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre 3</h2>
+            <div class="ramo" id="c14" data-requisitos="c7">Cuidados de Pediátrica</div>
+            <div class="ramo" id="c15" data-requisitos="c8">Cuidados de Enfermería de Urgencias</div>
+            <div class="ramo" id="c16" data-requisitos="c9">Manejo de Insumos</div>
+            <div class="ramo" id="c17" data-requisitos="c9">Manejo de Equipos e Insumos</div>
+            <div class="ramo" id="c18" data-requisitos="c10">Práctica Clínica II</div>
+            <div class="ramo" id="c19">Mentalidad Emprendedora</div>
+            <div class="ramo" id="c20">Inglés Básico I</div>
+            <div class="ramo" id="c21">Curso de Formación Cristiana</div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre 4</h2>
+            <div class="ramo" id="c22" data-requisitos="c13">Cuidados de Enfermería en Salud Mental</div>
+            <div class="ramo" id="c23" data-requisitos="c12">Habilidades para el Trabajo</div>
+            <div class="ramo" id="c24" data-requisitos="c3">Promoción y Prevención de la Salud</div>
+            <div class="ramo" id="c25">Informática en la Atención del Paciente</div>
+            <div class="ramo" id="c26" data-requisitos="c18">Práctica Clínica III</div>
+            <div class="ramo" id="c27" data-requisitos="c20">Inglés Básico II</div>
+            <div class="ramo" id="c28" data-requisitos="c13">Ética para el Trabajo</div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre 5</h2>
+            <div class="ramo" id="c29" data-requisitos="c26">Portafolio de Título</div>
+            <div class="ramo" id="c30" data-requisitos="c29">Internado</div>
+        </div>
+    </div>
+
+    <div id="modal-requisitos" class="modal-oculto">
+        <div class="modal-contenido">
+            <span class="cerrar-modal">&times;</span>
+            <h3>Requisitos pendientes</h3>
+            <p>Para aprobar este ramo, primero debes aprobar:</p>
+            <ul id="lista-requisitos"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
